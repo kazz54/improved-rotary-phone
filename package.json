@@ -3,20 +3,9 @@
   "version": "1.0.0",
   "description": "My blog",
   "scripts": {
-    "build-dev:webpack": "webpack",
-    "watch:webpack": "webpack --watch",
-    "watch:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "dev": "npm-run-all clean build-dev:webpack --parallel watch:*",
-    "build:webpack": "cross-env NODE_ENV=production webpack --mode production",
-    "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
-    "build": "run-s clean build:*",
-    "serve:local": "serve _site",
-    "serve": "run-s build serve:local",
-    "clean": "rimraf _site",
-    "format:js": "prettier '**/*.js' --write && eslint '**/*.js' --fix",
-    "format:json": "prettier '**/*.json' --write",
-    "format": "run-s format:*",
-    "lint": "eslint --ext .js ."
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "debug": "DEBUG=* eleventy"
   },
   "license": "ISC",
   "devDependencies": {
